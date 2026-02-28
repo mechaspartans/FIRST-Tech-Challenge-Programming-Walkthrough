@@ -83,6 +83,11 @@ public class MotorSetup extends OpMode {
         Motor = mainUtil.setUpEncoderMotor("motor", DcMotorSimple.Direction.FORWARD, false);
     }
 
+    // The loop function below runs repeatedly
+    // once you click the start button running
+    // for as long as the code is running on the
+    // driver's hub. This will also allow for you
+    // to use controller input later on for teleop.
     @Override
     public void loop() {
         Motor.setPower(0.5); // sends in an amount of power towards the motor
