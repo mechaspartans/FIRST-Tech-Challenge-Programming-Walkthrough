@@ -27,11 +27,16 @@
 * */
 
 
+// In this example it will run the motor at half
+// speed for a second, stop the motor for a second,
+// and run continuously until the code is stopped.
+
+
 // This assigns the class to a designated
 //  V V V folder on your computer V V V
-package org.firstinspires.ftc.teamcode.First_Step.I;
+package org.firstinspires.ftc.teamcode.Tutorial.I_Motor;
 
-// The imports are using First's code they've already
+// The imports are using FIRST's code they've already
 // set up for you to use that will aid you in programming
 // so you're not starting from scratch. V V V
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
@@ -39,8 +44,9 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
-// This references another one of the classes I have setup
-// but I will explain more about it later.
+// This references a utility class I have setup that
+// you can use in other classes to utilize the functions
+// and variables, but there are more details later.
 import org.firstinspires.ftc.teamcode.utility_code.MainUtil;
 
 
@@ -49,10 +55,9 @@ import org.firstinspires.ftc.teamcode.utility_code.MainUtil;
 // The name will be the class name unless otherwise
 // defined by putting parentheses and setting the
 // name to something else but must be put in parentheses.
-// you can also change the group inside of the parentheses.
-@Autonomous(name = "First Step 1 - Motor", group = "Autonomous")
+@Autonomous(name = "1 - Motor", group = "Tutorial")
 public class MotorSetup extends OpMode {
-    MainUtil mainUtil; // We will explain this later on
+    MainUtil mainUtil; // set up access to our utility class
 
 
     // this is defining a motor as a variable so
@@ -71,16 +76,15 @@ public class MotorSetup extends OpMode {
     // other class that we declare inside of the Init function.
     @Override
     public void init() {
-        mainUtil = new MainUtil(); // This defines the variable we
-        // said we would explain later
-        mainUtil.init(hardwareMap); // Function from said variable.
+        mainUtil = new MainUtil(); // This defines the new instance of the utility code
+        mainUtil.init(hardwareMap); // Initializes the utility with the hardwaremap.
 
         // This uses the motor variable we declared earlier to set it up
-        // declaring the identifier you will use in the Driver's Hub during
+        // declaring the identifier you will use in the Driver Hub during
         // config, the direction the motor is going so if the motor is moving
         // the wrong way you can swap between FORWARD and REVERSE, and you can
         // inform the function of whether or not there are encoders.
-        Motor = mainUtil.setUpEncoderMotor("motor", DcMotorSimple.Direction.FORWARD, false);
+        Motor = mainUtil.setUpEncoderMotor("motor", DcMotorSimple.Direction.FORWARD, false); // Make sure to set the motor in config to the identifier
     }
 
     // The loop function below runs repeatedly
@@ -90,7 +94,19 @@ public class MotorSetup extends OpMode {
     // to use controller input later on for teleop.
     @Override
     public void loop() {
-        Motor.setPower(0.5); // sends in an amount of power towards the motor
-        // but is somewhat inconsistent when running but still useful.
+        // sends in an amount of power towards the motor but
+        // is somewhat inconsistent when running but still useful.
+        Motor.setPower(0.5);
+
+        // This runs the code before it for
+        // a certain amount of milliseconds set.
+        mainUtil.goingFor(1000);
+
+        // These next lines set the power to 0 for 1 second
+        // and then the loop repeats.
+        Motor.setPower(0);
+        mainUtil.goingFor(1000);
     }
 }
+
+// Go to the next class which is ServoSetup
