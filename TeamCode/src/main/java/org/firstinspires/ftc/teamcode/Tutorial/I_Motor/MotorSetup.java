@@ -1,30 +1,30 @@
-/*
-*
-* Welcome to the Unofficial FIRST Tech Challenge Programming Walkthrough
-*
-* In this walkthrough you will learn how to set up something like a motor
-* all the way up to a camera.
-*
-* You will also learn how to program a Teleop and Autonomous
-*
-* If you want to learn the basics of programming I would go to FIRST's
-* FTCSIM, https://ftcsim.org/, to learn the basics of programming but if
-* you are trying to make the switch to programming in Java and know the
-* basics keep going on after this to learn more.
-*
-* One last thing, MAKE SURE TO END WITH SEMICOLONS!!! (;)
-*
-* KEY:
-*
-* Colon :
-* Semicolon ;
-* Parentheses ()
-* Bracket []
-* Curly Bracket or Braces {}
-* Quotation Marks ""
-* Asterisk *
-*
-* */
+//
+// Welcome to the Unofficial FIRST Tech Challenge Programming Walkthrough
+//
+// In this walkthrough you will learn how to set up something like a motor
+// all the way up to a camera.
+//
+// You will also learn how to program a Teleop and Autonomous
+//
+// If you want to learn the basics of programming I would go to FIRST's
+// FTCSIM, https://ftcsim.org/, to learn the basics of programming but if
+// you are trying to make the switch to programming in Java and know the
+// basics keep going on after this to learn more.
+//
+// One last thing, MAKE SURE TO END WITH SEMICOLONS!!! (;)
+//
+// KEY:
+//
+// Colon :
+// Semicolon ;
+// Parentheses ()
+// Bracket []
+// Curly Bracket/Braces {}
+// Quotation Marks ""
+// Asterisk *
+// Slash /
+// Backslash \
+//
 
 
 // In this example it will run the motor at half
@@ -57,17 +57,17 @@ import org.firstinspires.ftc.teamcode.utility_code.MainUtil;
 // name to something else but must be put in parentheses.
 @Autonomous(name = "1 - Motor", group = "Tutorial")
 public class MotorSetup extends OpMode {
-    MainUtil mainUtil; // set up access to our utility class
+    MainUtil mainUtil; // Sets up access to our utility class
 
 
-    // this is defining a motor as a variable so
+    // This is defining a motor as a variable so
     // it can be used later to set the power or velocity.
     // We will be using power for now and explaining velocity
     // later. The "public" means that any other class can
     // utilize the variable, the "DcMotorEx" defines the
     // variable as being a motor and the "Motor" is the
     // name of the actual variable that you will use later on.
-    public DcMotorEx Motor;
+    public DcMotorEx motor;
 
     // On the driver's hub when you click Init this is
     // the code that runs. It allows you to set up motors and
@@ -84,7 +84,7 @@ public class MotorSetup extends OpMode {
         // config, the direction the motor is going so if the motor is moving
         // the wrong way you can swap between FORWARD and REVERSE, and you can
         // inform the function of whether or not there are encoders.
-        Motor = mainUtil.setUpEncoderMotor("motor", DcMotorSimple.Direction.FORWARD, false); // Make sure to set the motor in config to the identifier
+        motor = mainUtil.setUpEncoderMotor("motor", DcMotorSimple.Direction.FORWARD, false); // Make sure to set the motor in config to the identifier
     }
 
     // The loop function below runs repeatedly
@@ -96,7 +96,7 @@ public class MotorSetup extends OpMode {
     public void loop() {
         // sends in an amount of power towards the motor but
         // is somewhat inconsistent when running but still useful.
-        Motor.setPower(0.5);
+        motor.setPower(0.5);
 
         // This runs the code before it for
         // a certain amount of milliseconds set.
@@ -104,7 +104,7 @@ public class MotorSetup extends OpMode {
 
         // These next lines set the power to 0 for 1 second
         // and then the loop repeats.
-        Motor.setPower(0);
+        motor.setPower(0);
         mainUtil.goingFor(1000);
     }
 }

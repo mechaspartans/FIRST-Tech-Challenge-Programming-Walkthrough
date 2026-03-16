@@ -1,6 +1,6 @@
-/*
-* Make sure if you haven't already to start with MotorSetup
-* */
+//
+// Make sure if you haven't already to start with MotorSetup
+//
 
 package org.firstinspires.ftc.teamcode.Tutorial.II_Servo;
 
@@ -15,21 +15,33 @@ public class ServoSetup extends OpMode {
     MainUtil mainUtil;
 
 
-    //
-    public Servo Servo;
+    // This defines the servo as a variable
+    // and it can be used later to set the
+    // position of the servo.
+    public Servo servo;
 
     @Override
     public void init() {
         mainUtil = new MainUtil();
         mainUtil.init(hardwareMap);
-        Servo = hardwareMap.get(Servo.class, "servo");
+        // The servo doesn't have anything about encoders,
+        // because they don't use them, or direction but
+        // you can set direction later on if needed by
+        // just putting the variable name and then adding
+        // .Direction.(FORWARD or REVERSE)
+        servo = hardwareMap.get(Servo.class, "servo");
     }
 
     @Override
     public void loop() {
-        Servo.setPosition(1);
+        // The servo uses position instead of just
+        // setting a power like motors do. You can
+        // set the 0 and 1 position by using
+        // a servo programmer to set the range the
+        // servo can go.
+        servo.setPosition(1);
         mainUtil.goingFor(1000);
-        Servo.setPosition(0);
+        servo.setPosition(0);
         mainUtil.goingFor(1000);
     }
 }
