@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.Servo;
 
-import org.firstinspires.ftc.teamcode.utility_code.MainUtil;
+import org.firstinspires.ftc.teamcode.Utility_Code.MainUtil;
 
 @Autonomous(name = "2 - Servo", group = "Tutorial")
 public class ServoSetup extends OpMode {

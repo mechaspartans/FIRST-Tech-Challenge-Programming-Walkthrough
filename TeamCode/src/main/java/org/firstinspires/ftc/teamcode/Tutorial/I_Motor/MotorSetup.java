@@ -47,7 +47,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 // This references a utility class I have setup that
 // you can use in other classes to utilize the functions
 // and variables, but there are more details later.
-import org.firstinspires.ftc.teamcode.utility_code.MainUtil;
+import org.firstinspires.ftc.teamcode.Utility_Code.MainUtil;
 
 
 // The @Autonomous is there to declare that this will
