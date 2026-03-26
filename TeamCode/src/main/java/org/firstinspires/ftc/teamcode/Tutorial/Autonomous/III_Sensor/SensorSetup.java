@@ -18,6 +18,9 @@ import org.firstinspires.ftc.teamcode.Utility_Code.MainUtil;
 public class SensorSetup extends OpMode {
 
     MainUtil mainUtil;
+    // Following sensors defined as
+    // variables allowing them to be
+    // used later on when programming
     TouchSensor touchSensor;
     RevColorSensorV3 colorSensor;
     DistanceSensor distanceSensor;
@@ -26,6 +29,9 @@ public class SensorSetup extends OpMode {
     public void init() {
         mainUtil = new MainUtil();
         mainUtil.init(hardwareMap);
+        // Sets the sensors as specific hardware
+        // with names that will be used for setting
+        // up config on driver's hub
         touchSensor = hardwareMap.get(TouchSensor.class, "touchSensor");
         colorSensor = hardwareMap.get(RevColorSensorV3.class, "colorSensor");
         distanceSensor = hardwareMap.get(DistanceSensor.class, "distanceSensor");
@@ -33,6 +39,10 @@ public class SensorSetup extends OpMode {
 
     @Override
     public void loop() {
+        // Telemetry prints whether or not the touch sensor
+        // is currently being pressed, the values of the
+        // Color Sensor in RGB, and the distance an object
+        // is from the Distance Sensor
         telemetry.addData("Touch Sensor Pressed", touchSensor.isPressed());
         telemetry.addData("Color Sensor RGB", String.valueOf(colorSensor.red()) + ", " + String.valueOf(colorSensor.green()) + ", " + String.valueOf(colorSensor.blue()));
         telemetry.addData("Distance Sensor Distance", distanceSensor.getDistance(DistanceUnit.INCH));
