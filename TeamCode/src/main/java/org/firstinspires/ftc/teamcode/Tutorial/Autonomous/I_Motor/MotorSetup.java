@@ -34,7 +34,7 @@
 
 // This assigns the class to a designated
 //  V V V folder on your computer V V V
-package org.firstinspires.ftc.teamcode.Tutorial.I_Motor;
+package org.firstinspires.ftc.teamcode.Tutorial.Autonomous.I_Motor;
 
 // The imports are using FIRST's code they've already
 // set up for you to use that will aid you in programming

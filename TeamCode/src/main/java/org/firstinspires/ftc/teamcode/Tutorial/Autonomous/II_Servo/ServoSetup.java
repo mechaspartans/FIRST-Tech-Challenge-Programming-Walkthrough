@@ -2,7 +2,7 @@
 // Make sure if you haven't already to start with MotorSetup
 //
 
-package org.firstinspires.ftc.teamcode.Tutorial.II_Servo;
+package org.firstinspires.ftc.teamcode.Tutorial.Autonomous.II_Servo;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;

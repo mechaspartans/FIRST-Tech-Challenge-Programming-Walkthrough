@@ -9,10 +9,6 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class MainUtil {
-    public DcMotorEx driveFrontLeft;
-    public DcMotorEx driveFrontRight;
-    public DcMotorEx driveBackLeft;
-    public DcMotorEx driveBackRight;
     HardwareMap hwMap = null;
 
     public DcMotorEx setUpEncoderMotor(String identifier, DcMotor.Direction direction, boolean withEncoder) {
