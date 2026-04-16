@@ -24,12 +24,18 @@ public class ServoSetup extends OpMode {
     public void init() {
         mainUtil = new MainUtil();
         mainUtil.init(hardwareMap);
+
         // The servo doesn't have anything about encoders,
         // because they don't use them, or direction but
         // you can set direction later on if needed by
         // just putting the variable name and then adding
         // .Direction.(FORWARD or REVERSE)
         servo = hardwareMap.get(Servo.class, "servo");
+
+        // This changes the range of the servo turn depending
+        // on the servo and the set position will take a
+        // percentage of the range. The range can be from (0 - 1)
+        servo.scaleRange(0, 1);
     }
 
     @Override

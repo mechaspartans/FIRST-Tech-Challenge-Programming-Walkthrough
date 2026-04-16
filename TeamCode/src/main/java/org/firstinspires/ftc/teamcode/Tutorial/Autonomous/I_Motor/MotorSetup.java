@@ -31,7 +31,6 @@
 // speed for a second, stop the motor for a second,
 // and run continuously until the code is stopped.
 
-
 // This assigns the class to a designated
 //  V V V folder on your computer V V V
 package org.firstinspires.ftc.teamcode.Tutorial.Autonomous.I_Motor;
@@ -94,12 +93,13 @@ public class MotorSetup extends OpMode {
     // to use controller input later on for teleop.
     @Override
     public void loop() {
-        // sends in an amount of power towards the motor but
-        // is somewhat inconsistent when running but still useful.
+        // Sends in an amount of power towards the motor but
+        // is somewhat inconsistent based on the voltage of the
+        // battery when running but still useful.
         motor.setPower(0.5);
 
-        // This runs the code before it for
-        // a certain amount of milliseconds set.
+        // Lets the code before it run during the time allotted
+        // in the parentheses.
         mainUtil.goingFor(1000);
 
         // These next lines set the power to 0 for 1 second
